@@ -1,6 +1,4 @@
-# Author: Fadi Badine
-# Date created: 14/06/2020
-# Last modified: 19/07/2023
+
 # Description: Classify speakers using Fast Fourier Transform (FFT) and a 1D Convnet.
 
 # Introduction
@@ -30,22 +28,20 @@ import keras
 from pathlib import Path
 from IPython.display import display, Audio
 
-# Get the data from https://www.kaggle.com/kongaevans/speaker-recognition-dataset/
-# and save it to ./speaker-recognition-dataset.zip
-# then unzip it to ./16000_pcm_speeches
+
 !kaggle datasets download -d avishkar001/iemocap-team-noob
 !unzip -qq iemocap-team-noob.zip
 
 DATASET_ROOT = "IEMOCAP_Team_Noob"
 
-# The folders in which we will put the audio samples and the noise samples
+
 AUDIO_SUBFOLDER = "audio"
 NOISE_SUBFOLDER = "noise"
 
 DATASET_AUDIO_PATH = os.path.join(DATASET_ROOT, AUDIO_SUBFOLDER)
 DATASET_NOISE_PATH = os.path.join(DATASET_ROOT, NOISE_SUBFOLDER)
 
-# Percentage of samples to use for validation
+
 VALID_SPLIT = 0.1
 
 # Seed to use when shuffling the dataset and the noise
